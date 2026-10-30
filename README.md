@@ -1,5 +1,7 @@
 # Text in AI images: did the model spell it right?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23815210.svg)](https://doi.org/10.5281/zenodo.23815210)
+
 Every image we generate for **[aifont.ai](https://aifont.ai)** is checked letter by letter against the word the prompt asked for. This repo is that ledger: one record per image, with the prompt, the model, the word it was meant to write, and whether it wrote it.
 
 <!-- stats -->
@@ -92,4 +94,4 @@ Data: [CC BY 4.0](LICENSE). Credit "AIFont (aifont.ai)". Code in `scripts/`: MIT
 
 ## Citing
 
-See [CITATION.cff](CITATION.cff), or GitHub's "Cite this repository" button.
+DOI: [10.5281/zenodo.23815210](https://doi.org/10.5281/zenodo.23815210) (all versions). See [CITATION.cff](CITATION.cff), or GitHub's "Cite this repository" button.
