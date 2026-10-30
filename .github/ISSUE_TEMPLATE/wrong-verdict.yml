@@ -1,0 +1,44 @@
+name: Wrong verdict
+description: An image is marked correct but the text is wrong, or the other way round.
+title: "Wrong verdict: #"
+labels: ["correction"]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record id
+      description: The `id` field of the record.
+      placeholder: "2172"
+    validations:
+      required: true
+  - type: input
+    id: says
+    attributes:
+      label: What the image actually says
+      description: Type it exactly as written in the image.
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Your verdict
+      options:
+        - correct
+        - incorrect
+        - unsure
+    validations:
+      required: true
+  - type: dropdown
+    id: native
+    attributes:
+      label: Are you a native reader of this language?
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Anything else
+      description: Which letter, stroke or dot is off, if it helps.

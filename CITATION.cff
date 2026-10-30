@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "AIFont Text Rendering Ledger"
+message: "If you use this dataset, please cite it."
+type: dataset
+authors:
+  - name: "AIFont"
+    website: "https://aifont.ai"
+abstract: >-
+  Images from five text-to-image models (GPT Image, Nano Banana, Grok Imagine,
+  Seedream, Qwen-Image), each asked to write a given word in a given lettering
+  style, in eight languages and scripts. Every image is judged for whether the
+  text is spelled exactly as requested, with error types and the text actually
+  rendered. Prompts, upstream model versions and generation settings included.
+keywords:
+  - text-to-image
+  - text rendering
+  - typography
+  - multilingual
+  - CJK
+  - Arabic
+  - evaluation
+  - dataset
+license: CC-BY-4.0
+url: "https://aifont.ai"
+repository-code: "https://github.com/Funovate-Technology/aifont-text-rendering"
+version: "1.0.0"

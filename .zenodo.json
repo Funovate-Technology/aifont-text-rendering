@@ -1,0 +1,31 @@
+{
+  "upload_type": "dataset",
+  "title": "AIFont Text Rendering Ledger: did five image models spell the word right, in eight languages",
+  "description": "<p>Images from five text-to-image models (GPT Image, Nano Banana, Grok Imagine, Seedream, Qwen-Image), each asked to write a given word in a given lettering style, in English, German, Spanish, Portuguese, Simplified and Traditional Chinese, Japanese and Arabic. Every image is judged for whether the text is spelled exactly as requested; incorrect ones record the error type and what the image actually says.</p><p>Each record carries the full prompt, the upstream model version at generation time and the generation settings. Nothing is retouched or cherry-picked: failed images stay in. Accuracy is meant to be counted on first attempts only, and <code>data/summary.json</code> is filtered that way.</p><p>The lettering styles and their prompts are published at <a href=\"https://aifont.ai\">aifont.ai</a>.</p>",
+  "creators": [
+    {
+      "name": "AIFont"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "keywords": [
+    "text-to-image",
+    "text rendering",
+    "typography",
+    "multilingual",
+    "CJK",
+    "Arabic",
+    "evaluation",
+    "image generation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://aifont.ai",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset",
+      "scheme": "url"
+    }
+  ]
+}
