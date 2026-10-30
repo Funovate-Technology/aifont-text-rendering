@@ -12,18 +12,17 @@ Every image we generate for **[aifont.ai](https://aifont.ai)** is checked letter
     74   disputed, waiting for a native speaker
 ```
 
-Correct / judged, first attempts only:
+Correct / judged. First attempts with the current prompt of each published style, so every model got the same prompts:
 
 | Language | GPT Image | Nano Banana | Grok Imagine | Seedream | Qwen-Image |
 |---|---:|---:|---:|---:|---:|
-| English | 81/82 | 64/64 | 64/65 | 64/64 | 63/64 |
-| German | 63/63 | 62/62 | 61/62 | 60/62 | 61/62 |
-| Spanish | 63/63 | 62/62 | 61/62 | 61/63 | 52/62 |
-| Portuguese | 62/62 | 61/61 | 59/61 | 61/61 | 52/61 |
-| Chinese (Simplified) | 65/65 | 62/63 | 63/64 | 61/64 | 63/64 |
-| Chinese (Traditional) | 1/1 | 1/1 | 1/1 | 1/1 | 1/1 |
-| Japanese | 65/66 | 63/64 | 56/65 | 55/65 | 48/65 |
-| Arabic | 60/65 | 64/64 | 39/61 | 34/62 | 8/69 |
+| English | 58/59 | 58/58 | 58/58 | 58/58 | 57/58 |
+| German | 59/59 | 59/59 | 58/59 | 56/59 | 57/59 |
+| Spanish | 59/59 | 59/59 | 58/59 | 57/59 | 49/59 |
+| Portuguese | 59/59 | 59/59 | 55/59 | 59/59 | 50/59 |
+| Chinese (Simplified) | 59/59 | 58/59 | 58/59 | 56/59 | 56/59 |
+| Japanese | 59/59 | 58/59 | 52/59 | 51/59 | 45/59 |
+| Arabic | 48/50 | 51/51 | 35/49 | 27/47 | 6/53 |
 <!-- /stats -->
 
 ## What a record looks like
@@ -74,7 +73,7 @@ If you read one of these languages and an image is judged wrong, open an issue w
 
 ## Counting accuracy
 
-Use first attempts only (`"attempt": "first"`). Retries exist because the first try failed, and extra samples were drawn after a correct one, so both lean toward correct. `data/summary.json` is already filtered that way. With a few dozen images per cell, report counts, not percentages.
+Use first attempts only (`"attempt": "first"`). Retries exist because the first try failed, and extra samples were drawn after a correct one, so both lean toward correct. To compare models, also keep to the published styles (`"purpose": "published"`) and the prompt version each style uses now: new styles were drafted on one model before all five ran. `data/summary.json` and the table above are filtered that way, and leave out disputed images. With about 60 images per cell, report counts, not percentages.
 
 ## Files
 

@@ -136,10 +136,18 @@ def record(a, rs):
 
 
 def summary(recs):
-    """Accuracy of the text, first attempts only (retries and extra samples skew toward correct)."""
+    """Accuracy of the text: first attempts, published styles, current prompt version (retries and extra samples skew toward correct)."""
+    # Same prompt for every model: per style and language, only the prompt version in use now (the latest one).
+    # New styles are drafted on one model first, so earlier versions would give that model extra rows.
+    current = {}
+    for x in recs:
+        if x["purpose"] == "published":
+            current[(x["style"], x["language"])] = x["prompt_hash"]   # records are in id order, so the last one wins
     cell = collections.defaultdict(lambda: collections.Counter())
     for x in recs:
-        if x["attempt"] != "first" or not x["text_verdict"]:
+        if x["attempt"] != "first" or x["purpose"] != "published" or not x["text_verdict"]:
+            continue
+        if x["prompt_hash"] != current[(x["style"], x["language"])]:
             continue
         cell[(x["model"], x["language"])][x["text_verdict"]] += 1
     out = []
@@ -166,7 +174,7 @@ def readme_table(rows, recs):
     disputed = sum(1 for x in recs if x["disputed"])
     return (f"```\n{len(recs):>6,}   images, each with a text verdict\n{len({x['style'] for x in recs}):>6,}   lettering styles\n"
             f"{len({x['language'] for x in recs}):>6,}   languages\n{len({x['model'] for x in recs}):>6,}   image models\n"
-            f"{human:>6,}   also reviewed by a person\n{disputed:>6,}   disputed, waiting for a native speaker\n```\n\nCorrect / judged, first attempts only:\n\n" + head + body)
+            f"{human:>6,}   also reviewed by a person\n{disputed:>6,}   disputed, waiting for a native speaker\n```\n\nCorrect / judged. First attempts with the current prompt of each published style, so every model got the same prompts:\n\n" + head + body)
 
 
 def main():

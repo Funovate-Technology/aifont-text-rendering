@@ -2,361 +2,316 @@
  {
   "model": "GPT Image",
   "language": "ar",
-  "first_attempts": 76,
-  "correct": 60,
-  "incorrect": 5,
-  "unsure": 11,
-  "accuracy": 0.9231
- },
- {
-  "model": "GPT Image",
-  "language": "de",
-  "first_attempts": 63,
-  "correct": 63,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "GPT Image",
-  "language": "en",
-  "first_attempts": 82,
-  "correct": 81,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9878
- },
- {
-  "model": "GPT Image",
-  "language": "es",
-  "first_attempts": 63,
-  "correct": 63,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "GPT Image",
-  "language": "ja",
-  "first_attempts": 66,
-  "correct": 65,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9848
- },
- {
-  "model": "GPT Image",
-  "language": "pt",
-  "first_attempts": 62,
-  "correct": 62,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "GPT Image",
-  "language": "zh",
-  "first_attempts": 65,
-  "correct": 65,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "GPT Image",
-  "language": "zh-hant",
-  "first_attempts": 1,
-  "correct": 1,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Grok Imagine",
-  "language": "ar",
-  "first_attempts": 75,
-  "correct": 39,
-  "incorrect": 22,
-  "unsure": 14,
-  "accuracy": 0.6393
- },
- {
-  "model": "Grok Imagine",
-  "language": "de",
-  "first_attempts": 62,
-  "correct": 61,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9839
- },
- {
-  "model": "Grok Imagine",
-  "language": "en",
-  "first_attempts": 65,
-  "correct": 64,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9846
- },
- {
-  "model": "Grok Imagine",
-  "language": "es",
-  "first_attempts": 62,
-  "correct": 61,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9839
- },
- {
-  "model": "Grok Imagine",
-  "language": "ja",
-  "first_attempts": 65,
-  "correct": 56,
-  "incorrect": 9,
-  "unsure": 0,
-  "accuracy": 0.8615
- },
- {
-  "model": "Grok Imagine",
-  "language": "pt",
-  "first_attempts": 61,
-  "correct": 59,
-  "incorrect": 2,
-  "unsure": 0,
-  "accuracy": 0.9672
- },
- {
-  "model": "Grok Imagine",
-  "language": "zh",
-  "first_attempts": 64,
-  "correct": 63,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9844
- },
- {
-  "model": "Grok Imagine",
-  "language": "zh-hant",
-  "first_attempts": 1,
-  "correct": 1,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Nano Banana",
-  "language": "ar",
-  "first_attempts": 75,
-  "correct": 64,
-  "incorrect": 0,
-  "unsure": 11,
-  "accuracy": 1.0
- },
- {
-  "model": "Nano Banana",
-  "language": "de",
-  "first_attempts": 62,
-  "correct": 62,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Nano Banana",
-  "language": "en",
-  "first_attempts": 64,
-  "correct": 64,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Nano Banana",
-  "language": "es",
-  "first_attempts": 62,
-  "correct": 62,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Nano Banana",
-  "language": "ja",
-  "first_attempts": 64,
-  "correct": 63,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9844
- },
- {
-  "model": "Nano Banana",
-  "language": "pt",
-  "first_attempts": 61,
-  "correct": 61,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Nano Banana",
-  "language": "zh",
-  "first_attempts": 63,
-  "correct": 62,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9841
- },
- {
-  "model": "Nano Banana",
-  "language": "zh-hant",
-  "first_attempts": 1,
-  "correct": 1,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Qwen-Image",
-  "language": "ar",
-  "first_attempts": 76,
-  "correct": 8,
-  "incorrect": 61,
-  "unsure": 7,
-  "accuracy": 0.1159
- },
- {
-  "model": "Qwen-Image",
-  "language": "de",
-  "first_attempts": 62,
-  "correct": 61,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9839
- },
- {
-  "model": "Qwen-Image",
-  "language": "en",
-  "first_attempts": 64,
-  "correct": 63,
-  "incorrect": 1,
-  "unsure": 0,
-  "accuracy": 0.9844
- },
- {
-  "model": "Qwen-Image",
-  "language": "es",
-  "first_attempts": 62,
-  "correct": 52,
-  "incorrect": 10,
-  "unsure": 0,
-  "accuracy": 0.8387
- },
- {
-  "model": "Qwen-Image",
-  "language": "ja",
-  "first_attempts": 65,
+  "first_attempts": 58,
   "correct": 48,
-  "incorrect": 17,
-  "unsure": 0,
-  "accuracy": 0.7385
+  "incorrect": 2,
+  "unsure": 8,
+  "accuracy": 0.96
  },
  {
-  "model": "Qwen-Image",
-  "language": "pt",
-  "first_attempts": 61,
-  "correct": 52,
-  "incorrect": 9,
+  "model": "GPT Image",
+  "language": "de",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
   "unsure": 0,
-  "accuracy": 0.8525
+  "accuracy": 1.0
  },
  {
-  "model": "Qwen-Image",
-  "language": "zh",
-  "first_attempts": 64,
-  "correct": 63,
+  "model": "GPT Image",
+  "language": "en",
+  "first_attempts": 59,
+  "correct": 58,
   "incorrect": 1,
   "unsure": 0,
-  "accuracy": 0.9844
+  "accuracy": 0.9831
+ },
+ {
+  "model": "GPT Image",
+  "language": "es",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "GPT Image",
+  "language": "ja",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "GPT Image",
+  "language": "pt",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "GPT Image",
+  "language": "zh",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "ar",
+  "first_attempts": 58,
+  "correct": 35,
+  "incorrect": 14,
+  "unsure": 9,
+  "accuracy": 0.7143
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "de",
+  "first_attempts": 59,
+  "correct": 58,
+  "incorrect": 1,
+  "unsure": 0,
+  "accuracy": 0.9831
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "en",
+  "first_attempts": 58,
+  "correct": 58,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "es",
+  "first_attempts": 59,
+  "correct": 58,
+  "incorrect": 1,
+  "unsure": 0,
+  "accuracy": 0.9831
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "ja",
+  "first_attempts": 59,
+  "correct": 52,
+  "incorrect": 7,
+  "unsure": 0,
+  "accuracy": 0.8814
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "pt",
+  "first_attempts": 59,
+  "correct": 55,
+  "incorrect": 4,
+  "unsure": 0,
+  "accuracy": 0.9322
+ },
+ {
+  "model": "Grok Imagine",
+  "language": "zh",
+  "first_attempts": 59,
+  "correct": 58,
+  "incorrect": 1,
+  "unsure": 0,
+  "accuracy": 0.9831
+ },
+ {
+  "model": "Nano Banana",
+  "language": "ar",
+  "first_attempts": 58,
+  "correct": 51,
+  "incorrect": 0,
+  "unsure": 7,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Nano Banana",
+  "language": "de",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Nano Banana",
+  "language": "en",
+  "first_attempts": 58,
+  "correct": 58,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Nano Banana",
+  "language": "es",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Nano Banana",
+  "language": "ja",
+  "first_attempts": 59,
+  "correct": 58,
+  "incorrect": 1,
+  "unsure": 0,
+  "accuracy": 0.9831
+ },
+ {
+  "model": "Nano Banana",
+  "language": "pt",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Nano Banana",
+  "language": "zh",
+  "first_attempts": 59,
+  "correct": 58,
+  "incorrect": 1,
+  "unsure": 0,
+  "accuracy": 0.9831
  },
  {
   "model": "Qwen-Image",
-  "language": "zh-hant",
-  "first_attempts": 1,
-  "correct": 1,
-  "incorrect": 0,
-  "unsure": 0,
-  "accuracy": 1.0
- },
- {
-  "model": "Seedream",
   "language": "ar",
-  "first_attempts": 75,
-  "correct": 34,
-  "incorrect": 28,
-  "unsure": 13,
-  "accuracy": 0.5484
+  "first_attempts": 59,
+  "correct": 6,
+  "incorrect": 47,
+  "unsure": 6,
+  "accuracy": 0.1132
  },
  {
-  "model": "Seedream",
+  "model": "Qwen-Image",
   "language": "de",
-  "first_attempts": 62,
-  "correct": 60,
+  "first_attempts": 59,
+  "correct": 57,
   "incorrect": 2,
   "unsure": 0,
-  "accuracy": 0.9677
+  "accuracy": 0.9661
  },
  {
-  "model": "Seedream",
+  "model": "Qwen-Image",
   "language": "en",
-  "first_attempts": 64,
-  "correct": 64,
-  "incorrect": 0,
+  "first_attempts": 58,
+  "correct": 57,
+  "incorrect": 1,
   "unsure": 0,
-  "accuracy": 1.0
+  "accuracy": 0.9828
  },
  {
-  "model": "Seedream",
+  "model": "Qwen-Image",
   "language": "es",
-  "first_attempts": 63,
-  "correct": 61,
-  "incorrect": 2,
-  "unsure": 0,
-  "accuracy": 0.9683
- },
- {
-  "model": "Seedream",
-  "language": "ja",
-  "first_attempts": 65,
-  "correct": 55,
+  "first_attempts": 59,
+  "correct": 49,
   "incorrect": 10,
   "unsure": 0,
-  "accuracy": 0.8462
+  "accuracy": 0.8305
  },
  {
-  "model": "Seedream",
-  "language": "pt",
-  "first_attempts": 61,
-  "correct": 61,
-  "incorrect": 0,
+  "model": "Qwen-Image",
+  "language": "ja",
+  "first_attempts": 59,
+  "correct": 45,
+  "incorrect": 14,
   "unsure": 0,
-  "accuracy": 1.0
+  "accuracy": 0.7627
  },
  {
-  "model": "Seedream",
+  "model": "Qwen-Image",
+  "language": "pt",
+  "first_attempts": 59,
+  "correct": 50,
+  "incorrect": 9,
+  "unsure": 0,
+  "accuracy": 0.8475
+ },
+ {
+  "model": "Qwen-Image",
   "language": "zh",
-  "first_attempts": 64,
-  "correct": 61,
+  "first_attempts": 59,
+  "correct": 56,
   "incorrect": 3,
   "unsure": 0,
-  "accuracy": 0.9531
+  "accuracy": 0.9492
  },
  {
   "model": "Seedream",
-  "language": "zh-hant",
-  "first_attempts": 1,
-  "correct": 1,
+  "language": "ar",
+  "first_attempts": 58,
+  "correct": 27,
+  "incorrect": 20,
+  "unsure": 11,
+  "accuracy": 0.5745
+ },
+ {
+  "model": "Seedream",
+  "language": "de",
+  "first_attempts": 59,
+  "correct": 56,
+  "incorrect": 3,
+  "unsure": 0,
+  "accuracy": 0.9492
+ },
+ {
+  "model": "Seedream",
+  "language": "en",
+  "first_attempts": 58,
+  "correct": 58,
   "incorrect": 0,
   "unsure": 0,
   "accuracy": 1.0
+ },
+ {
+  "model": "Seedream",
+  "language": "es",
+  "first_attempts": 59,
+  "correct": 57,
+  "incorrect": 2,
+  "unsure": 0,
+  "accuracy": 0.9661
+ },
+ {
+  "model": "Seedream",
+  "language": "ja",
+  "first_attempts": 59,
+  "correct": 51,
+  "incorrect": 8,
+  "unsure": 0,
+  "accuracy": 0.8644
+ },
+ {
+  "model": "Seedream",
+  "language": "pt",
+  "first_attempts": 59,
+  "correct": 59,
+  "incorrect": 0,
+  "unsure": 0,
+  "accuracy": 1.0
+ },
+ {
+  "model": "Seedream",
+  "language": "zh",
+  "first_attempts": 59,
+  "correct": 56,
+  "incorrect": 3,
+  "unsure": 0,
+  "accuracy": 0.9492
  }
 ]
