@@ -73,6 +73,10 @@ Field by field in [SCHEMA.md](SCHEMA.md). The prompt text is in `data/prompts.js
 
 If you read one of these languages and an image is judged wrong, open an issue with the record `id` and what the image actually says ("Wrong verdict" template). Native speakers are what this dataset needs most, Arabic first. Accepted corrections are added as a new review under your GitHub handle, and the next release recomputes the verdict.
 
+## Native review
+
+Native speakers can also check images in batches at [aifont.ai/native-review](https://aifont.ai/native-review). Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose, and the accuracy table is recomputed from them. Arabic comes first: every Arabic first attempt behind the accuracy table, including the disputed ones.
+
 ## Counting accuracy
 
 Use first attempts only (`"attempt": "first"`). Retries exist because the first try failed, and extra samples were drawn after a correct one, so both lean toward correct. To compare models, also keep to the published styles (`"purpose": "published"`) and the prompt version each style uses now: new styles were drafted on one model before all five ran. `data/summary.json` and the table above are filtered that way, and leave out disputed images. With about 60 images per cell, report counts, not percentages.
