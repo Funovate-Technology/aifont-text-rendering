@@ -75,7 +75,14 @@ If you read one of these languages and an image is judged wrong, open an issue w
 
 ## Native review
 
-Native speakers can also check images in batches at [aifont.ai/native-review](https://aifont.ai/native-review). Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose, and the accuracy table is recomputed from them. Arabic comes first: every Arabic first attempt behind the accuracy table, including the disputed ones.
+Native speakers can also check images in batches at [aifont.ai/native-review](https://aifont.ai/native-review). Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose, and the accuracy table is recomputed from them. Open batches:
+
+| Batch | Language | Images | What it covers |
+|---|---|---|---|
+| [AR-001](https://aifont.ai/native-review/AR-001) | Arabic | 291 | Every Arabic first attempt behind the accuracy table, including the 41 disputed ones |
+| [JA-001](https://aifont.ai/native-review/JA-001) | Japanese | 295 | Every Japanese first attempt behind the accuracy table |
+
+The image list of each batch is in [`audits/<batch>/items.csv`](audits/); results go there too once a batch closes.
 
 ## Counting accuracy
 
@@ -89,6 +96,7 @@ Use first attempts only (`"attempt": "first"`). Retries exist because the first 
 | `data/generations.csv` | Same, flattened, without prompts |
 | `data/prompts.jsonl` | Prompt text by hash |
 | `data/summary.json` | Correct / incorrect by model × language, first attempts |
+| `audits/<batch>/items.csv` | Images in each native review batch |
 
 Images are linked, not included. `gallery_id` is the image's public page on FontVibe, the service that generated it.
 
