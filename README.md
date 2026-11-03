@@ -10,8 +10,8 @@ Every image we generate for **[aifont.ai](https://aifont.ai)** is checked letter
     66   lettering styles
      8   languages
      5   image models
-   733   also reviewed by a person
-    74   disputed, waiting for a native speaker
+   753   also reviewed by a person
+    40   disputed, waiting for a native speaker
 ```
 
 Correct / judged. First attempts with the current prompt of each published style, so every model got the same prompts:
@@ -24,7 +24,7 @@ Correct / judged. First attempts with the current prompt of each published style
 | Portuguese | 59/59 | 59/59 | 55/59 | 59/59 | 50/59 |
 | Chinese (Simplified) | 59/59 | 58/59 | 58/59 | 56/59 | 56/59 |
 | Japanese | 59/59 | 58/59 | 52/59 | 51/59 | 45/59 |
-| Arabic | 48/50 | 51/51 | 35/49 | 27/47 | 6/53 |
+| Arabic | 53/57 | 55/57 | 42/57 | 34/54 | 8/59 |
 <!-- /stats -->
 
 ## What a record looks like
@@ -66,7 +66,7 @@ Field by field in [SCHEMA.md](SCHEMA.md). The prompt text is in `data/prompts.js
 - `correct` means every letter, stroke, dot and diacritic matches `target_text`. Upper or lower case alone does not make it wrong unless the prompt asked for one.
 - `incorrect` records what kind of mistake it was (`error_types`) and, for spelling mistakes, what the image actually says (`rendered_text`).
 - Every image was first judged by an AI assistant. A person then went through the ones most likely to be misjudged: every image the AI marked wrong or unsure, every Arabic image, CJK images the AI had only seen on a contact sheet, plus a random sample of the rest. The sample of 50 matched the AI on all 50, so the other AI-only verdicts are kept, with `human_reviewed: false`.
-- That person was not a native speaker of most of these languages. Where the AI and the person disagree on Arabic, neither is a native reader, so the record is `unsure` with `disputed: true`. Those are left out of the accuracy table.
+- That person was not a native speaker of most of these languages. Every Arabic image behind the accuracy table was also reviewed by a native Arabic speaker (batch AR-001). Where a native speaker is sure, their call decides `text_verdict`. Images that are still disputed are `unsure` with `disputed: true` and left out of the accuracy table.
 - `reviews` lists each reviewer's own call, so you can weigh them yourself. This is not a 100% verified ground truth, and it isn't presented as one.
 
 ## Help fix it
@@ -75,14 +75,14 @@ If you read one of these languages and an image is judged wrong, open an issue w
 
 ## Native review
 
-Native speakers can also check images in batches at [aifont.ai/native-review](https://aifont.ai/native-review). Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose, and the accuracy table is recomputed from them. Open batches:
+Native speakers can also check images in batches at [aifont.ai/native-review](https://aifont.ai/native-review). Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose; where the reviewer is sure, their call decides the verdict, and the accuracy table is recomputed. Batches:
 
-| Batch | Language | Images | What it covers |
-|---|---|---|---|
-| [AR-001](https://aifont.ai/native-review/AR-001) | Arabic | 291 | Every Arabic first attempt behind the accuracy table, including the 41 disputed ones |
-| [JA-001](https://aifont.ai/native-review/JA-001) | Japanese | 295 | Every Japanese first attempt behind the accuracy table |
+| Batch | Language | Images | What it covers | Results |
+|---|---|---|---|---|
+| [AR-001](https://aifont.ai/native-review/AR-001) | Arabic | 291 | Every Arabic first attempt behind the accuracy table | [Reviewed](audits/AR-001/results.csv) by a native Arabic speaker, merged |
+| [JA-001](https://aifont.ai/native-review/JA-001) | Japanese | 295 | Every Japanese first attempt behind the accuracy table | Open |
 
-The image list of each batch is in [`audits/<batch>/items.csv`](audits/); results go there too once a batch closes.
+The image list of each batch is in [`audits/<batch>/items.csv`](audits/), submitted results in `audits/<batch>/results.csv`.
 
 ## Counting accuracy
 
@@ -97,6 +97,7 @@ Use first attempts only (`"attempt": "first"`). Retries exist because the first 
 | `data/prompts.jsonl` | Prompt text by hash |
 | `data/summary.json` | Correct / incorrect by model × language, first attempts |
 | `audits/<batch>/items.csv` | Images in each native review batch |
+| `audits/<batch>/results.csv` | Submitted native review results |
 
 Images are linked, not included. `gallery_id` is the image's public page on FontVibe, the service that generated it.
 

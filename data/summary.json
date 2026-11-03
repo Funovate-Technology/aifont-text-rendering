@@ -3,10 +3,10 @@
   "model": "GPT Image",
   "language": "ar",
   "first_attempts": 58,
-  "correct": 48,
-  "incorrect": 2,
-  "unsure": 8,
-  "accuracy": 0.96
+  "correct": 53,
+  "incorrect": 4,
+  "unsure": 1,
+  "accuracy": 0.9298
  },
  {
   "model": "GPT Image",
@@ -66,10 +66,10 @@
   "model": "Grok Imagine",
   "language": "ar",
   "first_attempts": 58,
-  "correct": 35,
-  "incorrect": 14,
-  "unsure": 9,
-  "accuracy": 0.7143
+  "correct": 42,
+  "incorrect": 15,
+  "unsure": 1,
+  "accuracy": 0.7368
  },
  {
   "model": "Grok Imagine",
@@ -129,10 +129,10 @@
   "model": "Nano Banana",
   "language": "ar",
   "first_attempts": 58,
-  "correct": 51,
-  "incorrect": 0,
-  "unsure": 7,
-  "accuracy": 1.0
+  "correct": 55,
+  "incorrect": 2,
+  "unsure": 1,
+  "accuracy": 0.9649
  },
  {
   "model": "Nano Banana",
@@ -192,10 +192,10 @@
   "model": "Qwen-Image",
   "language": "ar",
   "first_attempts": 59,
-  "correct": 6,
-  "incorrect": 47,
-  "unsure": 6,
-  "accuracy": 0.1132
+  "correct": 8,
+  "incorrect": 51,
+  "unsure": 0,
+  "accuracy": 0.1356
  },
  {
   "model": "Qwen-Image",
@@ -255,10 +255,10 @@
   "model": "Seedream",
   "language": "ar",
   "first_attempts": 58,
-  "correct": 27,
+  "correct": 34,
   "incorrect": 20,
-  "unsure": 11,
-  "accuracy": 0.5745
+  "unsure": 4,
+  "accuracy": 0.6296
  },
  {
   "model": "Seedream",

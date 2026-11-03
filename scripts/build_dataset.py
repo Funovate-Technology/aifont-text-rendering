@@ -18,6 +18,9 @@ The ledger is the source of truth; this repo is a snapshot of it. Rules:
   - Premium styles (ai_fonts.tier = 2) keep their prompt hash but not the prompt text:
     on aifont.ai the premium part of those prompts is shown only after unlocking.
   - Images are linked, not shipped. image_url points at the archived original.
+  - Native review (aifont.ai/native-review): every submitted result is added as a review under the reviewer's chosen credit.
+    A native speaker's correct / incorrect decides the record's text_verdict; their unsure leaves the earlier verdict as it was.
+    Submitted results are also written to audits/<batch>/results.csv.
 """
 import collections
 import csv
@@ -38,6 +41,13 @@ KIND = {1: "first", 2: "retry", 3: "extra_sample"}
 VERDICT = {1: "correct", 2: "incorrect", 3: "unsure"}
 LANG = {"en": "English", "de": "German", "es": "Spanish", "pt": "Portuguese", "zh": "Chinese (Simplified)",
         "zh-hant": "Chinese (Traditional)", "ja": "Japanese", "ar": "Arabic"}
+# Submitted native review results (latest submission of each reviewer's claim on a batch)
+NATIVE_SQL = """SELECT JSON_OBJECT('batch', b.code, 'seq', i.seq, 'attempt_id', i.attempt_id, 'verdict', r.verdict,
+        'native', rv.is_native, 'credit_mode', rv.credit_mode, 'credit', rv.credit_name, 'submit_round', r.submit_round,
+        'reviewed_at', DATE_FORMAT(r.answer_time, '%Y-%m-%dT%H:%i:%sZ'))
+      FROM audit_results r JOIN audit_claims c ON c.id = r.claim_id AND c.deleted = 0 AND c.status = 2
+      JOIN audit_batch_items i ON i.id = r.item_id JOIN audit_batches b ON b.id = r.batch_id JOIN audit_reviewers rv ON rv.id = r.reviewer_id
+      WHERE r.deleted = 0 AND r.submit_round = c.submit_round ORDER BY b.code, r.reviewer_id, i.seq;"""
 AI_REVIEWERS = {"皮皮虾", "claude"}   # the ledger's names for the AI assistant that reviewed before the human pass
 MAINTAINERS = {"Jack"}                # AIFont maintainers; contributors added later appear under their own handle
 
@@ -65,10 +75,25 @@ def fetch():
       FROM gen_reviews r WHERE r.deleted = 0 ORDER BY r.id;""")
     prompts = query("""SELECT JSON_OBJECT('prompt_hash', prompt_hash, 'prompt', MIN(prompt_sent))
       FROM gen_attempts WHERE deleted = 0 AND ok = 1 GROUP BY prompt_hash;""")
+    native = query(NATIVE_SQL)
     by_attempt = collections.defaultdict(list)
     for r in reviews:
         by_attempt[r["attempt_id"]].append(r)   # oldest first; the last one is the ledger's current conclusion
-    return attempts, by_attempt, {p["prompt_hash"]: p["prompt"] for p in prompts}
+    by_native = collections.defaultdict(list)
+    for n in native:
+        n["name"] = credit(n)
+        by_native[n["attempt_id"]].append(n)
+    return attempts, by_attempt, {p["prompt_hash"]: p["prompt"] for p in prompts}, native, by_native
+
+
+AUDIT_VERDICT = {1: "correct", 2: "incorrect", 3: "unsure"}   # native review answers: right / wrong / not sure
+
+
+def credit(n):
+    """Credit a native reviewer chose when signing: 1 real name, 2 pen name, 3 anonymous."""
+    if n["credit_mode"] in (1, 2) and n["credit"]:
+        return n["credit"]
+    return f"anonymous-{n['batch'].lower()}"
 
 
 def as_list(v):
@@ -91,7 +116,7 @@ def opinions(rs):
     """Each reviewer's latest call on the text. The ledger records a dispute as 'unsure' and keeps both sides in its notes;
     here the two sides are the AI's last call before the human pass and the human's own call."""
     last = {}
-    for r in rs:
+    for r in rs or []:
         last[who(r)] = r
     out = []
     for name, r in last.items():
@@ -103,7 +128,26 @@ def opinions(rs):
     return out
 
 
-def record(a, rs):
+def record(a, rs, ns=()):
+    return apply_native(ledger_record(a, rs), ns)
+
+
+def apply_native(rec, ns):
+    for n in ns:
+        v = AUDIT_VERDICT.get(n["verdict"])
+        rec["reviews"].append({"reviewer": n["name"], "text_verdict": v, "native_speaker": bool(n["native"]), "zoomed": False,
+                               "reviewed_at": n["reviewed_at"], "batch": n["batch"]})
+        rec["human_reviewed"] = True
+    decided = [AUDIT_VERDICT.get(n["verdict"]) for n in ns if n["native"] and n["verdict"] in (1, 2)]
+    if decided and len(set(decided)) == 1:   # native speakers who are sure, and agree, decide the text verdict
+        rec["text_verdict"] = decided[0]
+        rec["disputed"] = False
+        if decided[0] == "correct":
+            rec["error_types"], rec["rendered_text"] = [], None
+    return rec
+
+
+def ledger_record(a, rs):
     r = rs[-1] if rs else None
     spelling = [t for t in as_list(r["error_types"]) if t != "effect_drift"] if r else []
     return {
@@ -178,9 +222,25 @@ def readme_table(rows, recs):
 
 
 def main():
-    attempts, reviews, prompts = fetch()
-    recs = [record(a, reviews.get(a["id"])) for a in attempts]
+    attempts, reviews, prompts, native, by_native = fetch()
+    recs = [record(a, reviews.get(a["id"]), by_native.get(a["id"], ())) for a in attempts]
+    write_audit_results(native)
     premium = {a["prompt_hash"] for a in attempts if a["tier"] == 2}
+    write_outputs(recs, prompts, premium)
+
+
+def write_audit_results(native):
+    for batch in sorted({n["batch"] for n in native}):
+        with open(ROOT / "audits" / batch / "results.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(["seq", "record_id", "reviewer", "native_speaker", "text_verdict", "submitted_at"])
+            for n in native:
+                if n["batch"] == batch:
+                    w.writerow([n["seq"], n["attempt_id"], n["name"], bool(n["native"]), AUDIT_VERDICT.get(n["verdict"]), n["reviewed_at"]])
+
+
+def write_outputs(recs, prompts, premium):
+    """prompts: prompt_hash -> text, or None to keep data/prompts.jsonl as it is."""
     DATA.mkdir(exist_ok=True)
     (DATA / "generations.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in recs), encoding="utf-8")
     with open(DATA / "generations.csv", "w", newline="", encoding="utf-8") as f:
@@ -192,9 +252,10 @@ def main():
         w.writeheader()
         w.writerows(flat)
     used = {r["prompt_hash"] for r in recs}
-    (DATA / "prompts.jsonl").write_text("".join(
+    if prompts is not None:
+        (DATA / "prompts.jsonl").write_text("".join(
         json.dumps({"prompt_hash": h, "prompt": None if h in premium else prompts[h], "withheld": h in premium}, ensure_ascii=False) + "\n"
-        for h in sorted(used)), encoding="utf-8")
+            for h in sorted(used)), encoding="utf-8")
     rows = summary(recs)
     (DATA / "summary.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
@@ -202,7 +263,7 @@ def main():
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
     human = sum(1 for x in recs if x["human_reviewed"])
     disputed = sum(1 for x in recs if x["disputed"])
-    print(f"✅ {len(recs)} records, {len(used)} prompts ({len(premium & used)} withheld), {human} reviewed by a person, {disputed} disputed")
+    print(f"✅ {len(recs)} records, {len(used)} prompts, {human} reviewed by a person, {disputed} disputed")
 
 
 if __name__ == "__main__":

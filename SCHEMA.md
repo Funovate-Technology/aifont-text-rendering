@@ -23,7 +23,7 @@ One record per successful generation in `data/generations.jsonl`.
 | `rendered_text` | string \| null | What the image actually says, for spelling mistakes. |
 | `effect_drift` | bool | The look missed the style badly enough that we regenerated. Independent of spelling. |
 | `observations` | string[] | Recorded on correct images too; see below. |
-| `reviews` | object[] | Each reviewer's latest call on the text: `reviewer` (`ai`, `maintainer`, or a contributor's GitHub handle), `text_verdict`, `native_speaker`, `zoomed`, `reviewed_at`. |
+| `reviews` | object[] | Each reviewer's latest call on the text: `reviewer` (`ai`, `maintainer`, a contributor's GitHub handle, or the credit a native reviewer chose), `text_verdict`, `native_speaker`, `zoomed`, `reviewed_at`; native review results also carry `batch`. |
 | `human_reviewed` | bool | At least one person reviewed this image. `false` means the AI's verdict only. |
 | `disputed` | bool | Reviewers disagree and none is a native speaker. `text_verdict` is then `unsure`. |
 
