@@ -28,6 +28,12 @@ Correct / judged. First attempts with the current prompt of each published style
 | Arabic | 206/227 | 233/238 | 181/225 | 120/224 | 58/232 |
 <!-- /stats -->
 
+### AI shouldn't get your language wrong
+
+AI has only truly practised a handful of scripts. In the others, the result often looks convincing at a glance, until you find missing strokes and letters joined the wrong way. Model makers rarely catch these mistakes themselves; native speakers spot them instantly. Every judgement you make goes into this dataset under the name you choose.
+
+**Want to join in your language? Write to hello@aifont.ai.** See [Native review](#native-review).
+
 ## What a record looks like
 
 ```json
@@ -76,7 +82,19 @@ If you read one of these languages and an image is judged wrong, open an issue w
 
 ## Native review
 
-Native speakers can also check images in batches at [aifont.ai/native-review](https://aifont.ai/native-review). Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose; where the reviewer is sure, their call decides the verdict, and the accuracy table is recomputed. Batches:
+AI now writes for the whole world: posters, signs, greeting cards, slides and much more. Yet it has only truly practised a handful of scripts. Switch to any other and the result often looks convincing at a glance, until you look closer and find missing strokes and letters joined the wrong way. Hundreds of millions of people speak these languages, and AI has never taken them seriously.
+
+Model makers rarely catch these mistakes themselves; native speakers spot them instantly. So we are putting them on the table. We test one script at a time and publish every image and every judgement, with evidence clear enough that the people who build these models can see the errors, can't ignore them, and can fix them. We are starting with seven languages and will keep adding more.
+
+This needs the eyes of native speakers. Every judgement you make speaks for everyone who shares your language: it goes into the open dataset under the name you choose to leave, so that next time AI gets your language right.
+
+### How to take part
+
+Every batch is listed at [aifont.ai/native-review](https://aifont.ai/native-review) in the open, for anyone to see. Invited reviewers can take any batch in their own language, and each batch is reviewed by several people separately so the answers can be checked against each other. Each answer is saved as a draft automatically, and nothing counts until you sign and submit.
+
+Reviewing is by invitation. **Want to join in your language? Write to hello@aifont.ai.**
+
+Each batch covers one language. For every image you see the word the model was asked to write, but not the model name or our earlier verdict, so your call is independent. Submitted results are added to this dataset as new reviews under the credit you choose; where the reviewer is sure, their call decides the verdict, and the accuracy table is recomputed. Batches:
 
 | Batch | Language | Images | What it covers | Results |
 |---|---|---|---|---|
@@ -87,7 +105,7 @@ Native speakers can also check images in batches at [aifont.ai/native-review](ht
 | ZH-001 – ZH-006 | Chinese | 152 | Same as above, Chinese | Open |
 | EN-001 – EN-002, ES-001 – ES-002, PT-001 – PT-002, DE-001 – DE-002 | English, Spanish, Portuguese, German | 191 | 2026-11 update: images the AI judged wrong or unsure, plus a random spot check | Open |
 
-The 2026-11 batches are small on purpose: about 30 images each, roughly 10 minutes. Pick any open batch in your language at [aifont.ai/native-review](https://aifont.ai/native-review); the earlier batches in each language hold the images behind the accuracy table.
+The 2026-11 batches are small on purpose: about 30 images each, roughly 10 minutes. Invited reviewers can take any open batch in their language at [aifont.ai/native-review](https://aifont.ai/native-review); the earlier batches in each language hold the images behind the accuracy table.
 
 The image list of each batch is in [`audits/<batch>/items.csv`](audits/), submitted results in `audits/<batch>/results.csv`.
 
