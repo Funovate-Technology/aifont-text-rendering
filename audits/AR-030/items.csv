@@ -1,0 +1,31 @@
+seq,record_id,target_text,image_url
+1,7054,شارع سمسم,https://cos.aifont.ai/research/attempts/sesame-street-font/sesame-street-font-ar-grok2-s1-100592.jpg
+2,7045,شارع سمسم,https://cos.aifont.ai/research/attempts/sesame-street-font/sesame-street-font-ar-nanobanana21-s1-100582.jpg
+3,7046,شارع سمسم,https://cos.aifont.ai/research/attempts/sesame-street-font/sesame-street-font-ar-qwen3pro-s1-100583.jpg
+4,6949,المستنقع,https://cos.aifont.ai/research/attempts/shrek-font/shrek-font-ar-sunburst-s1-100482.jpg
+5,6948,المستنقع,https://cos.aifont.ai/research/attempts/shrek-font/shrek-font-ar-grok2-s1-100481.jpg
+6,6943,المستنقع,https://cos.aifont.ai/research/attempts/shrek-font/shrek-font-ar-nanobanana21-s1-100476.jpg
+7,6940,المستنقع,https://cos.aifont.ai/research/attempts/shrek-font/shrek-font-ar-qwen3pro-s1-100472.jpg
+8,4075,صلب,https://cos.aifont.ai/research/attempts/silver-letters/silver-letters-ar-sunburst-s1-97233.jpg
+9,4066,صلب,https://cos.aifont.ai/research/attempts/silver-letters/silver-letters-ar-nanobanana21-s1-97223.jpg
+10,4067,صلب,https://cos.aifont.ai/research/attempts/silver-letters/silver-letters-ar-qwen3pro-s1-97224.jpg
+11,4076,صلب,https://cos.aifont.ai/research/attempts/silver-letters/silver-letters-ar-seedream5pro-s1-97235.jpg
+12,7741,عائلة سيمبسون,https://cos.aifont.ai/research/attempts/simpsons-font/simpsons-font-ar-nanobanana21-s1-102099.jpg
+13,7738,عائلة سيمبسون,https://cos.aifont.ai/research/attempts/simpsons-font/simpsons-font-ar-qwen3pro-s1-102090.jpg
+14,5959,صمغ,https://cos.aifont.ai/research/attempts/slime-font/slime-font-ar-sunburst-s1-99452.jpg
+15,5961,صمغ,https://cos.aifont.ai/research/attempts/slime-font/slime-font-ar-grok2-s1-99454.jpg
+16,5958,صمغ,https://cos.aifont.ai/research/attempts/slime-font/slime-font-ar-nanobanana21-s1-99451.jpg
+17,5960,صمغ,https://cos.aifont.ai/research/attempts/slime-font/slime-font-ar-seedream5pro-s1-99453.jpg
+18,3744,همس,https://cos.aifont.ai/research/attempts/smoke-font/smoke-font-ar-sunburst-s1-96817.jpg
+19,3749,همس,https://cos.aifont.ai/research/attempts/smoke-font/smoke-font-ar-grok2-s1-96826.jpg
+20,3742,همس,https://cos.aifont.ai/research/attempts/smoke-font/smoke-font-ar-nanobanana21-s1-96815.jpg
+21,3739,همس,https://cos.aifont.ai/research/attempts/smoke-font/smoke-font-ar-qwen3pro-s1-96812.jpg
+22,3145,شتاء,https://cos.aifont.ai/research/attempts/snow-font/snow-font-ar-sunburst-s1-95161.jpg
+23,3140,شتاء,https://cos.aifont.ai/research/attempts/snow-font/snow-font-ar-nanobanana21-s1-95151.jpg
+24,3138,شتاء,https://cos.aifont.ai/research/attempts/snow-font/snow-font-ar-qwen3pro-s1-95150.jpg
+25,3146,شتاء,https://cos.aifont.ai/research/attempts/snow-font/snow-font-ar-seedream5pro-s1-95162.jpg
+26,6773,سونيك,https://cos.aifont.ai/research/attempts/sonic-font/sonic-font-ar-sunburst-s1-100295.jpg
+27,6774,سونيك,https://cos.aifont.ai/research/attempts/sonic-font/sonic-font-ar-grok2-s1-100296.jpg
+28,6765,سونيك,https://cos.aifont.ai/research/attempts/sonic-font/sonic-font-ar-nanobanana21-s1-100286.jpg
+29,5490,فلك,https://cos.aifont.ai/research/attempts/space-font/space-font-ar-sunburst-s1-98987.jpg
+30,5492,فلك,https://cos.aifont.ai/research/attempts/space-font/space-font-ar-grok2-s1-98989.jpg

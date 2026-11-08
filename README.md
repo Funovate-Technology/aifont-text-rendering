@@ -6,8 +6,9 @@ Every image we generate for **[aifont.ai](https://aifont.ai)** is checked letter
 
 <!-- stats -->
 ```
- 2,495   images, each with a text verdict
-    66   lettering styles
+11,115   images
+10,818   with a text verdict (AI reviewer or person)
+   314   lettering styles
      8   languages
      5   image models
    753   also reviewed by a person
@@ -18,13 +19,13 @@ Correct / judged. First attempts with the current prompt of each published style
 
 | Language | GPT Image | Nano Banana | Grok Imagine | Seedream | Qwen-Image |
 |---|---:|---:|---:|---:|---:|
-| English | 58/59 | 58/58 | 58/58 | 58/58 | 57/58 |
-| German | 59/59 | 59/59 | 58/59 | 56/59 | 57/59 |
-| Spanish | 59/59 | 59/59 | 58/59 | 57/59 | 49/59 |
-| Portuguese | 59/59 | 59/59 | 55/59 | 59/59 | 50/59 |
-| Chinese (Simplified) | 59/59 | 58/59 | 58/59 | 56/59 | 56/59 |
-| Japanese | 59/59 | 58/59 | 52/59 | 51/59 | 45/59 |
-| Arabic | 53/57 | 55/57 | 42/57 | 34/54 | 8/59 |
+| English | 279/282 | 281/281 | 278/282 | 261/276 | 256/280 |
+| German | 282/284 | 282/284 | 276/282 | 248/277 | 254/281 |
+| Spanish | 281/281 | 281/282 | 273/282 | 254/277 | 243/281 |
+| Portuguese | 281/282 | 282/283 | 275/282 | 261/278 | 245/281 |
+| Chinese (Simplified) | 247/251 | 249/251 | 239/251 | 232/248 | 223/250 |
+| Japanese | 248/250 | 243/249 | 228/249 | 214/248 | 154/250 |
+| Arabic | 206/227 | 233/238 | 181/225 | 120/224 | 58/232 |
 <!-- /stats -->
 
 ## What a record looks like
@@ -79,14 +80,20 @@ Native speakers can also check images in batches at [aifont.ai/native-review](ht
 
 | Batch | Language | Images | What it covers | Results |
 |---|---|---|---|---|
-| [AR-001](https://aifont.ai/native-review/AR-001) | Arabic | 291 | Every Arabic first attempt behind the accuracy table | [Reviewed](audits/AR-001/results.csv) by a native Arabic speaker, merged |
-| [JA-001](https://aifont.ai/native-review/JA-001) | Japanese | 295 | Every Japanese first attempt behind the accuracy table | Open |
+| [AR-001](https://aifont.ai/native-review/AR-001) | Arabic | 291 | Every Arabic first attempt behind the accuracy table (v1.0.0) | [Reviewed](audits/AR-001/results.csv) by a native Arabic speaker, merged |
+| [JA-001](https://aifont.ai/native-review/JA-001) | Japanese | 295 | Every Japanese first attempt behind the accuracy table (v1.0.0) | Open |
+| AR-002 – AR-053 | Arabic | 1,557 | 2026-11 update: every new Arabic image in the accuracy table, then the other new ones | Open |
+| JA-002 – JA-010 | Japanese | 252 | 2026-11 update: images the AI judged wrong or unsure, never checked zoomed in, plus a random spot check | Open |
+| ZH-001 – ZH-006 | Chinese | 152 | Same as above, Chinese | Open |
+| EN-001 – EN-002, ES-001 – ES-002, PT-001 – PT-002, DE-001 – DE-002 | English, Spanish, Portuguese, German | 191 | 2026-11 update: images the AI judged wrong or unsure, plus a random spot check | Open |
+
+The 2026-11 batches are small on purpose: about 30 images each, roughly 10 minutes. Pick any open batch in your language at [aifont.ai/native-review](https://aifont.ai/native-review); the earlier batches in each language hold the images behind the accuracy table.
 
 The image list of each batch is in [`audits/<batch>/items.csv`](audits/), submitted results in `audits/<batch>/results.csv`.
 
 ## Counting accuracy
 
-Use first attempts only (`"attempt": "first"`). Retries exist because the first try failed, and extra samples were drawn after a correct one, so both lean toward correct. To compare models, also keep to the published styles (`"purpose": "published"`) and the prompt version each style uses now: new styles were drafted on one model before all five ran. `data/summary.json` and the table above are filtered that way, and leave out disputed images. With about 60 images per cell, report counts, not percentages.
+Use first attempts only (`"attempt": "first"`). Retries exist because the first try failed, and extra samples were drawn after a correct one, so both lean toward correct. To compare models, also keep to the published styles (`"purpose": "published"`) and the prompt version each style uses now: new styles were drafted on one model before all five ran. `data/summary.json` and the table above are filtered that way, and leave out disputed images. Most verdicts so far come from an AI reviewer (see `reviews` in each record); the batches under Native review are where people check them. Report counts, not percentages.
 
 ## Files
 

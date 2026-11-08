@@ -175,7 +175,7 @@ def ledger_record(a, rs):
         "observations": as_list(r["observations"]) if r else [],
         "reviews": opinions(rs),
         "disputed": bool(r) and text_verdict(r) == "unsure" and "有争议" in (r.get("detail") or ""),
-        "human_reviewed": any(who(x) != "ai" for x in rs),
+        "human_reviewed": any(who(x) != "ai" for x in rs or []),
     }
 
 
@@ -216,7 +216,8 @@ def readme_table(rows, recs):
         body += f"| {LANG[l]} | " + " | ".join(cells) + " |\n"
     human = sum(1 for x in recs if x["human_reviewed"])
     disputed = sum(1 for x in recs if x["disputed"])
-    return (f"```\n{len(recs):>6,}   images, each with a text verdict\n{len({x['style'] for x in recs}):>6,}   lettering styles\n"
+    judged = sum(1 for x in recs if x["text_verdict"])
+    return (f"```\n{len(recs):>6,}   images\n{judged:>6,}   with a text verdict (AI reviewer or person)\n{len({x['style'] for x in recs}):>6,}   lettering styles\n"
             f"{len({x['language'] for x in recs}):>6,}   languages\n{len({x['model'] for x in recs}):>6,}   image models\n"
             f"{human:>6,}   also reviewed by a person\n{disputed:>6,}   disputed, waiting for a native speaker\n```\n\nCorrect / judged. First attempts with the current prompt of each published style, so every model got the same prompts:\n\n" + head + body)
 

@@ -1,0 +1,31 @@
+seq,record_id,target_text,image_url
+1,10282,صبر,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-de-qwen3pro-s1-105087.jpg
+2,10296,فخر,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-ja-qwen3pro-s1-105099.jpg
+3,10305,فكر,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-zh-qwen3pro-s1-105111.jpg
+4,10319,شرف,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-ar-qwen3pro-s1-105126.jpg
+5,10261,كرم,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-en-seedream5pro-s1-105066.jpg
+6,10274,قوة,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-es-seedream5pro-s1-105081.jpg
+7,10289,صدق,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-pt-seedream5pro-s1-105097.jpg
+8,10307,صبر,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-de-seedream5pro-s1-105115.jpg
+9,10322,فخر,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-ja-seedream5pro-s1-105131.jpg
+10,10332,فكر,https://cos.aifont.ai/research/attempts/kufic-font/kufic-font-zh-seedream5pro-s1-105142.jpg
+11,6072,ليغو,https://cos.aifont.ai/research/attempts/lego-font/lego-font-ar-qwen3pro-s1-99567.jpg
+12,7914,ألوها وأوهانا,https://cos.aifont.ai/research/attempts/lilo-and-stitch-font/lilo-and-stitch-font-ar-qwen3pro-s1-102320.jpg
+13,7923,ألوها وأوهانا,https://cos.aifont.ai/research/attempts/lilo-and-stitch-font/lilo-and-stitch-font-ar-seedream5pro-s1-102330.jpg
+14,4233,لمعة,https://cos.aifont.ai/research/attempts/liquid-chrome-font/liquid-chrome-font-ar-qwen3pro-s1-97412.jpg
+15,7947,لوني تونز,https://cos.aifont.ai/research/attempts/looney-tunes-font/looney-tunes-font-ar-qwen3pro-s1-102355.jpg
+16,8284,خاتم القوة,https://cos.aifont.ai/research/attempts/lord-of-the-rings-font/lord-of-the-rings-font-ar-sunburst-s1-102759.jpg
+17,8282,خاتم القوة,https://cos.aifont.ai/research/attempts/lord-of-the-rings-font/lord-of-the-rings-font-ar-qwen3pro-s1-102755.jpg
+18,8286,خاتم القوة,https://cos.aifont.ai/research/attempts/lord-of-the-rings-font/lord-of-the-rings-font-ar-seedream5pro-s1-102760.jpg
+19,3975,صخب,https://cos.aifont.ai/research/attempts/manga-sfx-font/manga-sfx-font-ar-qwen3pro-s1-97131.jpg
+20,3986,صخب,https://cos.aifont.ai/research/attempts/manga-sfx-font/manga-sfx-font-ar-seedream5pro-s1-97143.jpg
+21,8491,بهجة,https://cos.aifont.ai/research/attempts/marquee-letters/marquee-letters-ar-qwen3pro-s1-103051.jpg
+22,9246,ماكدونالدز,https://cos.aifont.ai/research/attempts/mcdonalds-font/mcdonalds-font-ar-qwen3pro-s1-103879.jpg
+23,9256,ماكدونالدز,https://cos.aifont.ai/research/attempts/mcdonalds-font/mcdonalds-font-ar-seedream5pro-s1-103891.jpg
+24,9381,فتيات لئيمات,https://cos.aifont.ai/research/attempts/mean-girls-font/mean-girls-font-ar-qwen3pro-s1-104032.jpg
+25,5581,عسل,https://cos.aifont.ai/research/attempts/melting-font/melting-font-ar-seedream5pro-s1-99080.jpg
+26,6626,ميتاليكا,https://cos.aifont.ai/research/attempts/metallica-font/metallica-font-ar-nanobanana21-s1-100140.jpg
+27,6623,ميتاليكا,https://cos.aifont.ai/research/attempts/metallica-font/metallica-font-ar-qwen3pro-s1-100137.jpg
+28,6261,مبهج,https://cos.aifont.ai/research/attempts/mexican-font/mexican-font-ar-grok2-s1-99767.jpg
+29,6252,مبهج,https://cos.aifont.ai/research/attempts/mexican-font/mexican-font-ar-qwen3pro-s1-99757.jpg
+30,9399,النادي,https://cos.aifont.ai/research/attempts/mickey-mouse-font/mickey-mouse-font-ar-grok2-s1-104052.jpg
