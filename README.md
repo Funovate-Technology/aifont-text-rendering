@@ -109,6 +109,12 @@ The 2026-11 batches are small on purpose: about 30 images each, roughly 10 minut
 
 The image list of each batch is in [`audits/<batch>/items.csv`](audits/), submitted results in `audits/<batch>/results.csv`.
 
+### Certificate of contribution
+
+Every batch you submit earns a certificate of contribution. It shows your name, the language, how many images you reviewed and this dataset's DOI. Each certificate has its own public verification link, so you can put it on your CV or show it to your university or employer, and anyone can check that it is real. You can change the name on it yourself. [See a sample](https://aifont.ai/native-review/certificate/NR-SAMPLE).
+
+![Sample certificate of contribution](assets/certificate-sample.jpg)
+
 ## Counting accuracy
 
 Use first attempts only (`"attempt": "first"`). Retries exist because the first try failed, and extra samples were drawn after a correct one, so both lean toward correct. To compare models, also keep to the published styles (`"purpose": "published"`) and the prompt version each style uses now: new styles were drafted on one model before all five ran. `data/summary.json` and the table above are filtered that way, and leave out disputed images. Most verdicts so far come from an AI reviewer (see `reviews` in each record); the batches under Native review are where people check them. Report counts, not percentages.
